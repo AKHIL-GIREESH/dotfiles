@@ -1,15 +1,16 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](red)\
+[](mauve)\
 $os\
 $username\
-[](bg:peach fg:red)\
+[](bg:peach fg:mauve)\
 $directory\
 [](bg:yellow fg:peach)\
 $git_branch\
 $git_status\
-[](fg:yellow bg:green)\
+$fill\
+[](fg:green)\
 $c\
 $rust\
 $golang\
@@ -26,13 +27,18 @@ $time\
 [ ](fg:lavender)\
 $cmd_duration\
 $line_break\
-$character"""
+$character
+"""
 
 palette = 'catppuccin_mocha'
 
+[fill]
+symbol = "─" 
+style = "fg:surface1"
+
 [os]
 disabled = false
-style = "bg:red fg:crust"
+style = "bg:mauve fg:crust"
 
 [os.symbols]
 Windows = ""
@@ -58,8 +64,8 @@ RedHatEnterprise = "󱄛"
 
 [username]
 show_always = true
-style_user = "bg:red fg:crust"
-style_root = "bg:red fg:crust"
+style_user = "bg:mauve fg:crust"
+style_root = "bg:mauve fg:crust"
 format = '[ $user]($style)'
 
 [directory]
@@ -186,10 +192,10 @@ subtext1 = "#bac2de"
 subtext0 = "#a6adc8"
 overlay2 = "#9399b2"
 overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
+overlay0 = "#6c7086" # Restored from #000000
+surface2 = "#585b70" # Restored from #000000
+surface1 = "#45475a" # Restored from #000000 (Matches nvim's lines)
+surface0 = "#313244" # Restored from #000000
 base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
